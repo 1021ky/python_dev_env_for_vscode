@@ -71,6 +71,7 @@ class AbstractFormBuilder(metaclass=ABCMeta):
         pass
 
 class HtmlFormBuilder(AbstractFormBuilder):
+    """HTMLのフォームのビルダー"""
 
     def __init__(self):
         self.title = 'HtmlFormBuilder'
@@ -106,9 +107,7 @@ class HtmlFormBuilder(AbstractFormBuilder):
         return "\n".join(html)
 
 class TkFormBuilder(AbstractFormBuilder):
-    """Tkinterのフォームのビルダー
-
-    """
+    """Tkinterのフォームのビルダー"""
 
     # add***で追加されたTkinterのフォームを生成する
     TEMPLATE = """#!/usr/bin/env python3
