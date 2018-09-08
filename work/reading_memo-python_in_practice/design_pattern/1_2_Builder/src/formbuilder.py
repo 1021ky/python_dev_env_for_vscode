@@ -10,7 +10,8 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 # General Public License for more details.
 
-import abc
+from abc import ABCMeta
+from abc import abstractmethod
 from html import escape
 import re
 
@@ -46,26 +47,26 @@ def main():
         file.write(tkFrom)
 
 
-class AbstractFormBuilder(metaclass=abc.ABCMeta):
+class AbstractFormBuilder(metaclass=ABCMeta):
     """フォームビルダーの抽象基底クラス"""
 
-    @abc.abstractclassmethod
+    @abstractmethod
     def add_title(self, title):
         self.title = title
 
-    @abc.abstractclassmethod
+    @abstractmethod
     def form(self):
         pass
 
-    @abc.abstractclassmethod
+    @abstractmethod
     def add_label(self, text, row, column, **kwargs):
         pass
 
-    @abc.abstractclassmethod
+    @abstractmethod
     def add_entry(self, variable, row, column, **kwargs):
         pass
 
-    @abc.abstractclassmethod
+    @abstractmethod
     def add_button(self, text, row, column, **kwargs):
         pass
 
